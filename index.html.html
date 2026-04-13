@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>حجز جهاز بايدر رياضي — صفحة هبوط</title>
+  <style>
+    :root{
+      --accent:#0b8457;
+      --muted:#666;
+      --bg:#f6f7f9;
+      --card:#fff;
+      --radius:12px;
+      --shadow: 0 8px 22px rgba(12,23,34,0.08);
+      font-family:"Noto Naskh Arabic", "Segoe UI", Arial, sans-serif;
+    }
+    body{background:var(--bg);margin:18px;display:flex;align-items:center;justify-content:center;min-height:100vh;color:#111}
+    .container{max-width:980px;width:100%;padding:18px}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;gap:20px;padding:20px;align-items:flex-start;flex-wrap:wrap}
+    .media{flex:0 0 380px}
+    .media img, .media video{width:100%;height:auto;border-radius:10px;display:block;background:#eee}
+    .info{flex:1;min-width:260px;display:flex;flex-direction:column;gap:12px}
+    h1{margin:0;font-size:1.4rem}
+    .sku{color:var(--muted);font-size:0.95rem}
+    .prices{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .old-price{color:var(--muted);text-decoration:line-through;font-size:1.05rem}
+    .new-price{color:var(--accent);font-weight:800;font-size:1.5rem}
+    .badge{background:#ffb400;color:#111;padding:6px 10px;border-radius:8px;font-weight:700;font-size:0.95rem}
+    .desc{color:#222}
+    form .row{display:flex;gap:12px;flex-wrap:wrap}
+    label{font-weight:700;margin-bottom:6px;display:block}
+    input[type="text"], input[type="tel"], textarea, select{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:0.98rem}
+    textarea{min-height:80px;resize:vertical}
+    .file-area{border:2px dashed #e7e7e7;padding:12px;border-radius:10px;background:#fafafa}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    button.primary{background:var(--accent);color:#fff;border:0;padding:12px 16px;border-radius:10px;font-weight:800;cursor:pointer}
+    button.secondary{background:#fff;border:1px solid #ddd;padding:10px 14px;border-radius:10px;cursor:pointer}
+    .note{color:var(--muted);font-size:0.95rem}
+    .meta{display:flex;gap:10px;color:var(--muted);font-size:0.95rem}
+    .preview{margin-top:10px}
+    .error{color:#b00020;font-size:0.95rem}
+    footer{margin-top:12px;color:var(--muted);font-size:0.95rem}
+    @media (max-width:800px){
+      .card{flex-direction:column}
+      .media{flex-basis:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <article class="card" itemscope itemtype="https://schema.org/Product" aria-label="صفحة هبوط جهاز بايدر رياضي">
+      <div class="media" id="mediaBox">
+        <img id="mainImage" alt="جهاز بايدر رياضي" src="https://via.placeholder.com/760x500?text=جهاز+بايدر+رياضي" />
+      </div>
+
+      <div class="info">
+        <div>
+          <h1 itemprop="name">جهاز بايدر رياضي — قدم ووايدي متعدد الاستخدام</h1>
+          <div class="sku">رمز المنتج: PB-BAIDER-01</div>
+        </div>
+
+        <div class="prices" aria-live="polite">
+          <div class="old-price" id="oldPriceDisplay"></div>
+          <div class="new-price" id="newPriceDisplay"></div>
+          <div class="badge" id="discountBadge"></div>
+        </div>
+
+        <p class="desc">
+          جهاز بايدر رياضي متعدد الاستخدامات للتمارين المنزلية واللياقة — قوي، مريح وسهل الاستخدام. التوصيل مجاني لكل العراق.
+        </p>
+
+        <form id="orderForm" novalidate>
+          <div class="row">
+            <div style="flex:1;min-width:180px">
+              <label for="name">الاسم الكامل *</label>
+              <input type="text" id="name" name="name" required placeholder="اسمك الكامل" />
+            </div>
+
+            <div style="flex:1;min-width:180px">
+              <label for="phone">الهاتف (واتساب) *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="مثال: 07701234567" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div style="flex:1">
+              <label for="governorate">المحافظة *</label>
+              <select id="governorate" name="governorate" required>
+                <option value="">اختر المحافظة</option>
+                <option>بغداد</option>
+                <option>بابل</option>
+                <option>ديالى</option>
+                <option>نينوى</option>
+                <option>صلاح الدين</option>
+                <option>كربلاء</option>
+                <option>واسط</option>
+                <option>البصرة</option>
+                <option>الموصل</option>
+                <option>أخرى</option>
+              </select>
+            </div>
+
+            <div style="flex:1">
+              <label for="nearest">أقرب نقطة دالة</label>
+              <input type="text" id="nearest" name="nearest" placeholder="مثال: بالقرب من جامع الفلاني" />
+            </div>
+          </div>
+
+          <div>
+            <label for="address">العنوان التفصيلي *</label>
+            <textarea id="address" name="address" required placeholder="شارع، حي، رقم المنزل..."></textarea>
+          </div>
+
+          <div style="margin-top:8px">
+            <label>ارفاق صورة (حتى 5 MB) أو فيديو (حتى 1 GB)</label>
+            <div class="file-area">
+              <input type="file" id="fileInput" accept="image/*,video/*" />
+              <div class="note" id="fileNote">مسموح: صور (JPEG, PNG, WebP) ≤ 5 MB، فيديو (MP4) ≤ 1 GB.</div>
+              <div class="error" id="fileError" role="alert" aria-live="assertive"></div>
+              <div class="preview" id="previewArea" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="primary" id="sendWhatsapp">تأكيد الحجز عبر واتساب</button>
+            <button type="button" class="secondary" id="copyMessage">نسخ نص الحجز</button>
+            <button type="button" class="secondary" id="clearForm">مسح النموذج</button>
+          </div>
+
+          <div class="meta" style="margin-top:10px">
+            <div>التوصيل: <strong>مجاني لكل العراق</strong></div>
+            <div>الواتساب: <strong>+964 781 183 1007</strong></div>
+          </div>
+        </form>
+
+        <footer>
+          <div class="note">ملاحظة: مستطيل رفع الملفات يتحقق من نوع وحجم الملف محلياً. إذا لم تقم بتوفير خادم للرفع، سيفتح التطبيق محادثة واتساب مع رسالة جاهزة، ويمكنك إرفاق الملف يدوياً في المحادثة.</div>
+        </footer>
+      </div>
+    </article>
+  </div>
+
+  <script>
+    (function(){
+      // تعديل هذا إذا أردت رفع الملفات إلى باك-إند خاص بك ثم تضمين رابط الملف في رسالة الواتساب.
+      // مثال: const UPLOAD_ENDPOINT = 'https://example.com/api/upload';
+      const UPLOAD_ENDPOINT = ''; // اتركه فارغاً لإرسال الرسالة عبر واتساب فقط (بدون رفع تلقائي)
+
+      const PHONE_WHATSAPP = '9647811831007'; // رقم المستلم لواتساب (بدون +)
+      const OLD_PRICE = 70000;
+      const NEW_PRICE = 60000;
+      const PRODUCT_NAME = 'جهاز بايدر رياضي — قدم ووايدي متعدد الاستخدام';
+
+      const fileInput = document.getElementById('fileInput');
+      const previewArea = document.getElementById('previewArea');
+      const fileError = document.getElementById('fileError');
+      const mainImage = document.getElementById('mainImage');
+      const oldPriceDisplay = document.getElementById('oldPriceDisplay');
+      const newPriceDisplay = document.getElementById('newPriceDisplay');
+      const discountBadge = document.getElementById('discountBadge');
+
+      // عرض الأسعار وحساب الخصم
+      function formatIQD(n){
+        return n.toLocaleString('ar-EG') + ' د.ع';
+      }
+      oldPriceDisplay.textContent = formatIQD(OLD_PRICE);
+      newPriceDisplay.textContent = formatIQD(NEW_PRICE);
+      const discount = OLD_PRICE > 0 ? Math.round((OLD_PRICE - NEW_PRICE) / OLD_PRICE * 100) : 0;
+      discountBadge.textContent = discount > 0 ? 'خصم ' + discount + '%' : 'سعر خاص';
+
+      // ملفات: قيود الحجم
+      const MAX_IMAGE = 5 * 1024 * 1024; // 5 MB
+      const MAX_VIDEO = 1 * 1024 * 1024 * 1024; // 1 GB
+
+      let selectedFile = null;
+      fileInput.addEventListener('change', function(e){
+        fileError.textContent = '';
+        previewArea.innerHTML = '';
+        selectedFile = null;
+        const f = e.target.files[0];
+        if(!f) return;
+        const type = f.type || '';
+        // image/*
+        if(type.startsWith('image/')){
+          if(f.size > MAX_IMAGE){
+            fileError.textContent = 'حجم الصورة أكبر من 5 ميغابايت. الرجاء اختيار صورة أصغر.';
+            fileInput.value = '';
+            return;
+          }
+          const img = document.createElement('img');
+          img.src = URL.createObjectURL(f);
+          img.alt = 'معاينة الصورة';
+          img.style.maxWidth = '100%';
+          img.onload = () => URL.revokeObjectURL(img.src);
+          previewArea.appendChild(img);
+          mainImage.src = img.src;
+          selectedFile = f;
+        } else if(type.startsWith('video/')){
+          if(f.size > MAX_VIDEO){
+            fileError.textContent = 'حجم الفيديو أكبر من 1 جيجابايت. الرجاء اختيار ملف أصغر.';
+            fileInput.value = '';
+            return;
+          }
+          const vid = document.createElement('video');
+          vid.controls = true;
+          vid.src = URL.createObjectURL(f);
+          vid.style.maxWidth = '100%';
+          vid.onloadeddata = () => URL.revokeObjectURL(vid.src);
+          previewArea.appendChild(vid);
+          // ضع صورة افتراضية مع أيقونة الفيديو
+          mainImage.src = 'https://via.placeholder.com/760x500?text=ملف+فيديو+مرفق';
+          selectedFile = f;
+        } else {
+          fileError.textContent = 'نوع الملف غير مدعوم. اختر صورة أو فيديو (MP4 مفضّل).';
+          fileInput.value = '';
+        }
+      });
+
+      // حفظ/استعادة من localStorage
+      const form = document.getElementById('orderForm');
+      const storageKey = 'hb_order_form_v1';
+      function saveForm(){
+        const data = {
+          name: form.name.value || '',
+          phone: form.phone.value || '',
+          governorate: form.governorate.value || '',
+          nearest: form.nearest.value || '',
+          address: form.address.value || ''
+        };
+        localStorage.setItem(storageKey, JSON.stringify(data));
+      }
+      function loadForm(){
+        try{
+          const raw = localStorage.getItem(storageKey);
+          if(!raw) return;
+          const d = JSON.parse(raw);
+          form.name.value = d.name || '';
+          form.phone.value = d.phone || '';
+          form.governorate.value = d.governorate || '';
+          form.nearest.value = d.nearest || '';
+          form.address.value = d.address || '';
+        }catch(e){}
+      }
+      form.addEventListener('input', saveForm);
+      loadForm();
+
+      // بناء رسالة الحجز
+      function buildMessage(fileUrl){
+        const name = form.name.value.trim() || '-';
+        const phone = form.phone.value.trim() || '-';
+        const governorate = form.governorate.value || '-';
+        const nearest = form.nearest.value.trim() || '-';
+        const address = form.address.value.trim() || '-';
+        const lines = [
+          'طلب حجز منتج',
+          'المنتج: ' + PRODUCT_NAME,
+          'السعر الحالي: ' + formatIQD(NEW_PRICE),
+          'السعر السابق: ' + formatIQD(OLD_PRICE),
+          'نسبة الخصم: ' + discount + '%',
+          '',
+          'معلومات المشتري:',
+          'الاسم: ' + name,
+          'الهاتف: ' + phone,
+          'المحافظة: ' + governorate,
+          'أقرب نقطة دالة: ' + nearest,
+          'العنوان: ' + address,
+          '',
+          'التوصيل: مجاني لكل العراق',
+        ];
+        if(fileUrl){
+          lines.push('');
+          lines.push('رابط المرفق: ' + fileUrl);
+        } else if(selectedFile){
+          lines.push('');
+          lines.push('ملاحظة: يوجد مرفق (صورة/فيديو) — رجاء إرفاقه يدوياً في محادثة الواتساب أو رفعه عبر رابط لكم.');
+        }
+        lines.push('');
+        lines.push('الرجاء تأكيد الحجز والوقت المتاح للتوصيل.');
+        return lines.join('\n');
+      }
+
+      // إرسال إلى واتساب (أو رفع أولاً إذا كان لدينا ENDPOINT)
+      async function sendWhatsApp(){
+        fileError.textContent = '';
+        // تحقق من الحقول المطلوبة
+        if(!form.name.value.trim()){
+          alert('الرجاء إدخال الاسم الكامل.');
+          form.name.focus(); return;
+        }
+        if(!form.phone.value.trim()){
+          alert('الرجاء إدخال رقم الهاتف (واتساب).');
+          form.phone.focus(); return;
+        }
+        if(!form.governorate.value){
+          alert('الرجاء اختيار المحافظة.');
+          form.governorate.focus(); return;
+        }
+        if(!form.address.value.trim()){
+          alert('الرجاء إدخال العنوان التفصيلي.');
+          form.address.focus(); return;
+        }
+
+        // إذا مُعرّف ENDPOINT قم بالرفع أولاً
+        if(UPLOAD_ENDPOINT && selectedFile){
+          try{
+            const fd = new FormData();
+            fd.append('file', selectedFile);
+            // يمكنك إضافة حقول إضافية إن رغبت
+            const res = await fetch(UPLOAD_ENDPOINT, { method: 'POST', body: fd });
+            if(!res.ok) throw new Error('فشل رفع الملف. الرمز: ' + res.status);
+            const json = await res.json();
+            const fileUrl = json.url || json.file || '';
+            const message = buildMessage(fileUrl);
+            openWhatsAppWindow(message);
+            return;
+          } catch(err){
+            fileError.textContent = 'خطأ في رفع الملف: ' + err.message;
+            // استمر لإرسال الرسالة مع تعليمات إرفاق المرفق يدوياً
+          }
+        }
+
+        // لا رفع => سنتيح الفتح مع رسالة جاهزة، ونطلب من المستخدم إرفاق الملف يدوياً إذا وُجد
+        const message = buildMessage('');
+        openWhatsAppWindow(message);
+      }
+
+      function openWhatsAppWindow(message){
+        const encoded = encodeURIComponent(message);
+        const url = 'https://wa.me/' + PHONE_WHATSAPP + '?text=' + encoded;
+        // حاول فتح نافذة جديدة (ويب أو تطبيق)
+        window.open(url, '_blank');
+      }
+
+      // نسخ نص الحجز
+      document.getElementById('copyMessage').addEventListener('click', function(){
+        const message = buildMessage('');
+        navigator.clipboard.writeText(message).then(()=>{
+          alert('نُسخ نص الحجز. يمكنك لصقه في واتساب وإرفاق الملف إن وُجد.');
+        }).catch(()=>{
+          alert('تعذّر نسخ النص تلقائياً. انسخ النص يدوياً:\n\n' + message);
+        });
+      });
+
+      document.getElementById('sendWhatsapp').addEventListener('click', function(){
+        sendWhatsApp();
+      });
+
+      document.getElementById('clearForm').addEventListener('click', function(){
+        if(confirm('هل تود مسح بيانات النموذج؟')){
+          form.reset();
+          fileInput.value = '';
+          previewArea.innerHTML = '';
+          mainImage.src = 'https://via.placeholder.com/760x500?text=جهاز+بايدر+رياضي';
+          selectedFile = null;
+          localStorage.removeItem(storageKey);
+        }
+      });
+
+      // تحسين تجربة: إذا ضغط المستخدم رقم الهاتف بزر Enter يتم فتح واتساب
+      document.getElementById('phone').addEventListener('keydown', function(e){
+        if(e.key === 'Enter'){ e.preventDefault(); sendWhatsApp(); }
+      });
+
+      // أضف بيانات schema.org الأساسية
+      (function addSchema(){
+        const productEl = document.querySelector('[itemscope][itemtype="https://schema.org/Product"]');
+        if(!productEl) return;
+        const offer = document.createElement('div');
+        offer.innerHTML = '<meta itemprop="priceCurrency" content="IQD"><meta itemprop="price" content="' + NEW_PRICE + '"><link itemprop="availability" href="https://schema.org/InStock">';
+        productEl.appendChild(offer);
+      })();
+    })();
+  </script>
+</body>
+</html>
